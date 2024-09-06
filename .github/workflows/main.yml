@@ -1,0 +1,14 @@
+name: Run Gatling Enterprise Simulation
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gatling Enterprise Action
+        uses: gatling/enterprise-action@v1
+        with:
+          api_token: ${{ secrets.GATLING_ENTERPRISE_API_TOKEN }}
+          simulation_id: "c7307eb0-6ec2-4eb1-b0b0-c7f4bb3632df"
